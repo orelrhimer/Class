@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Odbc;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -12,7 +13,7 @@ namespace orel
     {
         static void Main(string[] args)
         {
-            kwh();
+            loop5();
         }
 
         static void Myfanc1()
@@ -225,11 +226,97 @@ namespace orel
             Console.WriteLine("your price is:" + price);
         }
 
+        static void loop()
+        {
+            int num;
+            Console.WriteLine("write a number!");
+            num = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < num; i++)
+            {
+                Console.WriteLine("nagger");
+            }
+            Console.WriteLine(num);
+        }
+
+        static void loop2()
+        {
+            int num;
+            Console.WriteLine("write a number!");
+            num = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= num; i++)
+            {
+                Console.WriteLine(i + " nisan the nigger");
+            }
+            Console.WriteLine(num);
+        }
+
+        static void loop3()
+        {
+            int res = 1;
+            Console.WriteLine("write a number!");
+            int num = int.Parse(Console.ReadLine());
 
 
+            for (int i = 1; i <= num; i++)
+            {
+                res = res * i;
+            }
+            Console.WriteLine(res);
+        }
+        static void loop4()
+        {
+            int sum =0;
+            int steps;
+            int day;
+            int over10k = 0;
+            Console.WriteLine("how many days did you walked");
+            day = int.Parse(Console.ReadLine());
+            for (int i = 1; i <= day; i++)
+            {
+                Console.WriteLine(" tell " + day + " times how many steps did you take for evry day ");
+                steps = int.Parse(Console.ReadLine());
+                if (steps >= 10000)
+                {
+                    over10k++;
+                }
+            
+                sum = sum + steps;
+                Console.WriteLine("you walked" + over10k + "over 10k steps");
+                Console.WriteLine(sum);
+            }
+        }
+        static void loop5()
+        {
+            int student;
+            int totalgrade = 0;
+            int grade = 0;
+            int pass = 0;
+            int max = 0;
+            int avreggrade= 0;
+            Console.Write("how many student you have: ");
+            student = int.Parse(Console.ReadLine());
 
+            for (int i = 1; i < student; i++)
+            {
+                Console.WriteLine("student garde");
+                grade = int.Parse(Console.ReadLine());
+                totalgrade += grade;
+                if (grade > 55)
+                {
+                    pass++;
+                }
+                max = Math.Max(max, grade);
+            }
+            avreggrade = totalgrade / student ;
+            
 
+            Console.WriteLine("your avrege grade is "  + avreggrade);
+            Console.WriteLine(pass + "stdant passed");        
+            Console.WriteLine("max grade is" + max);
+        
+        }
 
-
-    }
+    }   
 }
