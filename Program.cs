@@ -1,4 +1,5 @@
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Data.Odbc;
 using System.Diagnostics;
@@ -13,7 +14,7 @@ namespace orel
     {
         static void Main(string[] args)
         {
-            loop5();
+            loop7();
         }
 
         static void Myfanc1()
@@ -128,7 +129,6 @@ namespace orel
 
         }
 
-
         static void grade()
         {
             double grade;
@@ -165,7 +165,6 @@ namespace orel
             }
 
         }
-
         static void numtype()
         {
             double num;
@@ -238,7 +237,6 @@ namespace orel
             }
             Console.WriteLine(num);
         }
-
         static void loop2()
         {
             int num;
@@ -251,7 +249,6 @@ namespace orel
             }
             Console.WriteLine(num);
         }
-
         static void loop3()
         {
             int res = 1;
@@ -267,7 +264,7 @@ namespace orel
         }
         static void loop4()
         {
-            int sum =0;
+            int sum = 0;
             int steps;
             int day;
             int over10k = 0;
@@ -281,7 +278,7 @@ namespace orel
                 {
                     over10k++;
                 }
-            
+
                 sum = sum + steps;
                 Console.WriteLine("you walked" + over10k + "over 10k steps");
                 Console.WriteLine(sum);
@@ -294,13 +291,13 @@ namespace orel
             int grade = 0;
             int pass = 0;
             int max = 0;
-            int avreggrade= 0;
+            int avreggrade = 0;
             Console.Write("how many student you have: ");
             student = int.Parse(Console.ReadLine());
 
             for (int i = 1; i < student; i++)
             {
-                Console.WriteLine("student garde");
+                Console.WriteLine("student grade");
                 grade = int.Parse(Console.ReadLine());
                 totalgrade += grade;
                 if (grade > 55)
@@ -309,14 +306,72 @@ namespace orel
                 }
                 max = Math.Max(max, grade);
             }
-            avreggrade = totalgrade / student ;
-            
+            avreggrade = totalgrade / student;
 
-            Console.WriteLine("your avrege grade is "  + avreggrade);
-            Console.WriteLine(pass + "stdant passed");        
-            Console.WriteLine("max grade is" + max);
-        
+
+            Console.WriteLine("your avrege grade is " + avreggrade);
+            Console.WriteLine(pass + " stdant passed");
+            Console.WriteLine("max grade is " + max);
+
         }
+        static void loop6()
+        {
+            int item;
+            int total = 0;
+            int price = 0;
+            int pass = 0;
+            int min = 0;
+            int avregprice = 0;
+            Console.Write("how many item you have: ");
+            item = int.Parse(Console.ReadLine());
 
-    }   
-}
+            for (int i = 0; i < item; i++)
+            {
+                Console.Write("what the price of every item: ");
+                price = int.Parse(Console.ReadLine());
+                total += price;
+                if (price > 100)
+                {
+                    pass++;
+                }
+                min = Math.Min(min, price);
+            }
+            avregprice = total + item;
+
+
+            Console.WriteLine("your price is " + avregprice + "$");
+            Console.WriteLine(pass + " above 100$");
+            Console.WriteLine("the lowest price " + min);
+
+        }
+        static void loop7()
+        {
+            int min = 0;
+            int presnt;
+            int above80 = 0;
+            bool lower20 = false;
+            Console.WriteLine("write yor buttary % for evry hour for 24h"); 
+            for (int i = 1; i <= 24; i++)
+            {
+                Console.Write("thid hour my buttry is: ");
+                presnt = int.Parse(Console.ReadLine());
+                if (presnt < 20)
+                {
+                    lower20 = true;
+                }
+
+                if (presnt > 80)
+                {
+                    above80++;
+                }
+                min = Math.Min(min, presnt);
+            }
+            Console.WriteLine("the fact that thers an hour that " + lower20);
+            Console.WriteLine("ther is" + above80 + );
+
+
+
+
+
+        }
+    }
